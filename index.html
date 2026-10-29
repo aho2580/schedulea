@@ -62,6 +62,56 @@ input,select{color:var(--theme)}
 </style>
 
 <style>.daynum:not(.holiday):not(.saturday){color:#222!important}</style>
+
+<style>
+/* ダーク背景：元の機能・レイアウトは維持して背景色のみ暗色化 */
+html,body{background:#000!important;color:#f5f5f5}
+header,.tabs{background:#111!important;border-color:#333!important}
+header h1,.sub{color:#f5f5f5}
+.card{background:#151515!important;color:#f5f5f5!important;box-shadow:0 2px 10px #0008}
+.card h2,.stat .num,.item,.grow,.item b{color:#f5f5f5}
+.stat{background:#252525!important}
+.stat .label,.small{color:#c7c7c7}
+.btn.light,.calendar-head button,.close,.item .del{background:#333!important;color:#f5f5f5!important}
+.item{background:#202020!important;border-color:#3a3a3a!important}
+input,select{background:#222!important;color:#f5f5f5!important;border-color:#555!important}
+.day{background:#1b1b1b!important;color:#f5f5f5!important;border-color:#444!important}
+.day.empty{background:#101010!important}
+.day.today{background:#303030!important}
+.day.selected{outline-color:var(--theme)!important}
+.week div{color:#c7c7c7!important}
+.daynum:not(.holiday):not(.saturday){color:#f5f5f5!important}
+.daynum.holiday{color:#ff5252!important}
+.daynum.saturday{color:#60a5fa!important}
+.modal{background:#151515!important;color:#f5f5f5!important}
+.modal h2,.modal h3{color:#f5f5f5!important}
+.done{color:#aaa!important}
+.theme-preset{background:#333;color:#fff;border:1px solid #666;border-radius:8px;padding:8px}
+</style>
+
+
+<style>
+/* 日付以外の文字はテーマ色に統一。日付の曜日色は維持する */
+body, header h1, .sub, .card, .card h2, .stat .num, .item, .grow, .item b,
+.small, .stat .label, .calendar-head b, .week div, .modal, .modal h2, .modal h3,
+label, p, .list, .event-label, .money-income, .money-expense {
+  color: var(--theme) !important;
+}
+.btn.light, .close, .calendar-head button, .item .del {
+  color: var(--theme) !important;
+}
+input, select, textarea {
+  color: var(--theme) !important;
+}
+.day { color: var(--theme) !important; }
+/* 平日・土日祝の日付だけは専用色を優先 */
+.daynum:not(.holiday):not(.saturday) { color: #f5f5f5 !important; }
+.daynum.holiday { color: #ff5252 !important; }
+.daynum.saturday { color: #60a5fa !important; }
+/* 完了済みTo Doは判読性を保つ */
+.done { color: var(--theme) !important; opacity: .65; }
+</style>
+
 </head>
 <body>
 <header><h1>くらしノート</h1><div class="sub">予定・お金・To Doをひとつに</div><button type="button" class="btn light" id="openThemeSettings" style="margin-top:8px">🎨 テーマの色</button></header>
